@@ -1,0 +1,96 @@
+/*
+ * File: custom.css
+ * Deskripsi: CSS kustom untuk Bootstrap Instagram Profile Clone
+ */
+
+/* 1. Pengaturan Sidebar */
+.sidebar-nav {
+    background-color: #fff; 
+}
+.sidebar-nav .nav-link {
+    padding: 10px 15px;
+    margin-right: 8px; 
+}
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .active-profile-link {
+    background-color: #f8f9fa; 
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+/* 2. Tabs Navigasi */
+.nav-tabs {
+    border-bottom: none !important; 
+}
+.nav-tabs .nav-link.active {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #000 !important;
+    font-weight: bold;
+    color: #000 !important;
+}
+.nav-tabs .nav-link {
+    color: #6c757d;
+    border: none;
+}
+
+/* 3. Ukuran Foto Profil & Highlight */
+.profile-img-size-lg {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+@media (min-width: 768px) {
+    .profile-img-size-lg {
+        width: 150px;
+        height: 150px;
+    }
+}
+.highlight-size {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: inline-block;
+    border: 2px solid #ccc;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+/* 4. Consistent Card Height (Rasio 1:1) */
+.consistent-card-height {
+    padding-bottom: 100%; 
+    position: relative;
+    height: 0; 
+    overflow: hidden;
+}
+.consistent-card-height img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.max-w-lg-900 {
+    max-width: 900px;
+}
+
+/* 5. Styling Khusus untuk Kartu "Tambah Foto" */
+.border-dashed {
+    border-style: dashed !important;
+}
+
+/* Memastikan elemen <a> (link) di dalam card mengambil tinggi penuh */
+.consistent-card-height a.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.2s;
+}
+
+.consistent-card-height a.card:hover {
+    background-color: #e9ecef !important;
+}

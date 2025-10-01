@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Instagram - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    aspectRatio: {
+                        'square': '1 / 1',
+                    },
+                    /* Tambahkan border-dashed custom jika CDN tidak mendukungnya langsung */
+                    /* Namun, kita akan mengandalkan style inline atau postCSS */
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS KUSTOM MINIMAL: Hanya untuk border dashed (jika CDN tidak mendukung) */
+        .border-dashed {
+            border-style: dashed;
+        }
+        /* Style untuk menjaga sidebar tetap di atas (sticky) dan tinggi penuh */
+        .sidebar-sticky {
+            position: sticky;
+            top: 0;
+        }
+        /* Style untuk link profile aktif */
+        .active-profile-link {
+            font-weight: 600; /* semi-bold */
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <div class="flex min-h-screen">
+
+        <div class="hidden md:block w-1/4 lg:w-1/6 border-r border-gray-200 p-4 pt-8 sidebar-sticky">
+            <h1 class="text-2xl font-bold mb-8 pl-3">Instagram</h1>
+            <nav>
+                <ul class="space-y-4">
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="fas fa-home mr-3 text-lg"></i> Home
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="fas fa-search mr-3 text-lg"></i> Search
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="far fa-compass mr-3 text-lg"></i> Explore
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="far fa-envelope mr-3 text-lg"></i> Messages
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="far fa-bell mr-3 text-lg"></i> Notifications
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="fas fa-plus-circle mr-3 text-lg"></i> Create
+                    </li>
+                    <li class="p-2 rounded bg-gray-100 cursor-pointer active-profile-link">
+                        <i class="fas fa-user-circle mr-3 text-lg"></i> Profile
+                    </li>
+                    <li class="p-2 rounded hover:bg-gray-100 cursor-pointer">
+                        <i class="fas fa-bars mr-3 text-lg"></i> More
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <main class="flex-grow w-full md:w-3/4 lg:w-5/6">
+            <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                
+                <header class="flex flex-col sm:flex-row items-center sm:items-start pb-6 border-b border-gray-200 mb-8">
+                    
+                    <div class="w-1/3 flex justify-center sm:block sm:w-1/4 mr-0 sm:mr-12">
+                        <div class="w-24 h-24 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-pink-500 p-0.5 shadow-md">
+                            <img src="TailwindIMG/FotoProfil.jpg" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    
+                    <div class="w-full sm:w-3/4 mt-4 sm:mt-0">
+                        <div class="flex items-center mb-3 flex-wrap">
+                            <h2 class="text-xl md:text-2xl font-light mr-4 order-1">yrszjyn</h2>
+                            
+                            <div class="flex space-x-2 mt-2 w-full sm:w-auto sm:mt-0 order-3 sm:order-2">
+                                <button class="border border-gray-300 text-gray-800 font-medium py-1 px-4 rounded text-sm w-1/2 sm:w-auto">Edit profile</button>
+                                <button class="border border-gray-300 text-gray-800 font-medium py-1 px-4 rounded text-sm w-1/2 sm:w-auto hidden md:inline-block">View archive</button>
+                            </div>
+                            
+                            <i class="fa-solid fa-ellipsis-h text-lg text-gray-700 ml-4 order-2 sm:order-3 cursor-pointer"></i>
+                        </div>
+
+                        <div class="hidden sm:flex space-x-8 mb-4">
+                            <div><span class="font-bold">12</span> posts</div>
+                            <div><span class="font-bold">177</span> followers</div>
+                            <div><span class="font-bold">191</span> following</div>
+                        </div>
+
+                        <div class="hidden sm:block">
+                            <p class="mb-1 font-semibold">Rizky Julian</p>
+                            <p class="mb-1 text-gray-500 text-sm"><i class="fas fa-at"></i> yrszjyn</p>
+                            <p class="mb-0 text-sm">"Jangan pernah bilang tidak mungkin kepadamu sebelum kamu mati mencobanya"</p>
+                            <p class="mb-0 text-sm">Sang penakluk konstantinopel</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full text-center grid grid-cols-3 py-3 mt-3 border-t border-gray-200 sm:hidden order-4">
+                        <div>
+                            <div class="font-bold">12</div>
+                            <div class="text-gray-500 text-xs">posts</div>
+                        </div>
+                        <div>
+                            <div class="font-bold">177</div>
+                            <div class="text-gray-500 text-xs">followers</div>
+                        </div>
+                        <div>
+                            <div class="font-bold">191</div>
+                            <div class="text-gray-500 text-xs">following</div>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="flex space-x-8 justify-start mb-8 pl-4 sm:pl-0">
+                    <div class="text-center w-16">
+                        <div class="w-16 h-16 rounded-full border-2 border-gray-300 p-0.5 mb-1 overflow-hidden mx-auto">
+                            <img src="TailwindIMG/BlueMoon.jpg" alt="Highlight" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="text-sm">Moon</div>
+                    </div>
+                    
+                    <div class="text-center w-16">
+                        <div class="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center bg-gray-50 mb-1 mx-auto">
+                            <i class="fas fa-plus text-lg text-gray-500"></i>
+                        </div>
+                        <div class="text-sm">New</div>
+                    </div>
+                </section>
+
+                <nav class="flex justify-center border-t border-gray-200 pt-3 mb-4 space-x-12">
+                    <button class="text-gray-800 border-t border-gray-800 font-semibold pt-2 pb-1 text-xs sm:text-sm">
+                        <i class="fas fa-th mr-2"></i> POSTS
+                    </button>
+                </nav>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 sm:gap-2"> 
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/Foto1.jpg" alt="Post 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/Foto2.jpg" alt="Post 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto3.jpg" alt="Post 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto4.jpg" alt="Post 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto5.jpg" alt="Post 5" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto6.jpg" alt="Post 6" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto7.jpg" alt="Post 7" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto8.jpg" alt="Post 8" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto9.jpg" alt="Post 9" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto10.jpg" alt="Post 10" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/foto11.jpg"Post 11" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative bg-gray-100 overflow-hidden">
+                        <img src="TailwindIMG/Foto12.jpg"Post 11" class="w-full h-full object-cover">
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="fixed bottom-4 right-4 hidden sm:block">
+        <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-150">
+            <i class="fas fa-comment-alt mr-2"></i> Messages
+        </button>
+    </div>
+
+</body>
+</html>
